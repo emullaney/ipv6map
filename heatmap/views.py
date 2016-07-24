@@ -1,6 +1,8 @@
 from django.contrib.auth.models import User, Group
 from rest_framework import viewsets
-from heatmap.serializers import UserSerializer, GroupSerializer
+
+from heatmap.serializers import UserSerializer, GroupSerializer, ipv6AddressSerializer
+from heatmap.models import ipv6Address
 
 
 class UserViewSet(viewsets.ModelViewSet):
@@ -17,3 +19,11 @@ class GroupViewSet(viewsets.ModelViewSet):
     """
     queryset = Group.objects.all()
     serializer_class = GroupSerializer
+
+
+class ipv6AddressViewSet(viewsets.ModelViewSet):
+    """
+    API endpoint that allows groups to be viewed or edited.
+    """
+    queryset = ipv6Address.objects.all()
+    serializer_class = ipv6AddressSerializer
