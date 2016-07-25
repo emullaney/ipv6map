@@ -18,7 +18,6 @@ def create_city_data(apps, schema_editor):
     base = os.path.dirname(os.path.abspath(__file__))
     base = os.path.dirname(base) + '/data'
     with open(os.path.join(base, "GeoLite2-City-Blocks-IPv6.csv")) as csvfile:
-        import ipdb; ipdb.set_trace()
         next(csvfile)  # Skip the first line, header line
         reader = csv.reader(csvfile, delimiter=',')
         for row in reader:
