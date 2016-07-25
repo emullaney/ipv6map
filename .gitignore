@@ -1,2 +1,4 @@
 *.pyc
-ipv6map/__pycache__
+__pycache__
+db.sqlite3
+/static
