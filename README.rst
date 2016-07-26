@@ -1,5 +1,36 @@
 ipv6map
 ==============
-When this is complete, it will have an API that hosts IPv6 address data and a javascript heatmap that maps that data.
 
-I've gotten started on the API piece and loaded the data, next step is to build the heatmap.
+Below you will find basic setup and deployment instructions for the rapidpro_community_portal
+project. To begin you should have the following applications installed on your
+local development system::
+
+- Python >= 3.5
+- `pip <http://www.pip-installer.org/>`_ >= 1.5
+- `virtualenv <http://www.virtualenv.org/>`_ >= 1.10
+- `virtualenvwrapper <http://pypi.python.org/pypi/virtualenvwrapper>`_ >= 3.0
+- Postgres >= 9.1
+- git >= 1.7
+
+Getting Started
+------------------------
+
+First clone the repository from Github and switch to the new directory::
+
+    git clone git@github.com:emullaney/ipv6map.git
+    cd ipv6map
+    
+To setup your local environment you should create a virtualenv and install the
+necessary requirements::
+
+    mkvirtualenv heatmap -p /usr/bin/python3.5
+    $VIRTUAL_ENV/bin/pip install requirements.txt
+    
+Create the Postgres database and run the initial syncdb, which will also execute any required migrations::
+
+    createdb -E UTF-8 heatmap
+    python manage.py syncdb
+
+You should now be able to run the development server::
+
+    python manage.py runserver
