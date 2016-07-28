@@ -1,0 +1,22 @@
+{% load static %}
+
+<!doctype html>
+<html>
+
+<head>
+    <title>IPV6 Heatmap</title>
+    <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" >
+    <link rel="stylesheet" href="{% static 'map.css' %}" >
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="https://npmcdn.com/leaflet@0.7.7/dist/leaflet.js"></script>
+    <script src="https://dl.dropboxusercontent.com/u/21583725/jsfiddle/js/libs/heatmap.min.js"></script>
+    <script src="https://dl.dropboxusercontent.com/u/21583725/jsfiddle/js/libs/leaflet-heatmap.unmin.js"></script>
+</head>
+
+<body>
+    <div id="map"></div>
+</body>
+
+<script src="{% static 'map.js' %}"></script>
+
+</html>
