@@ -20,13 +20,13 @@ First clone the repository from Github and switch to the new directory::
     git clone git@github.com:emullaney/ipv6map.git
     cd ipv6map
     
-To setup your local environment you should create a virtualenv and install the
+To setup your local environment you should create a virtualenv running Python 3.5 and install the
 necessary requirements::
 
     mkvirtualenv heatmap -p /usr/bin/python3.5
     $VIRTUAL_ENV/bin/pip install requirements.txt
     
-Create the Postgres database and run the initial syncdb, which will also execute any required migrations::
+Create the database and run the initial syncdb, which will also execute any required migrations::
 
     createdb -E UTF-8 heatmap
     python manage.py syncdb
