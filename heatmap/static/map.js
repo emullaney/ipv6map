@@ -19,8 +19,8 @@ $(document).ready(function(){
         // configuration for the heatmap map layer
         var cfg = {
             // radius should be small ONLY if scaleRadius is true (or small radius is intended)
-            "radius": 0.1,
-                "maxOpacity": 0.9,
+            "radius": 0.2,
+            "maxOpacity": 0.9,
             // scales the radius based on map zoom
             "scaleRadius": true,
             // if set to false the heatmap uses the global maximum for colorization
@@ -71,4 +71,5 @@ $(document).ready(function(){
 
         });
     });
+
 });
