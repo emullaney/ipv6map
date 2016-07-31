@@ -20,7 +20,7 @@ $(document).ready(function(){
         var cfg = {
             // radius should be small ONLY if scaleRadius is true (or small radius is intended)
             "radius": 0.2,
-            "maxOpacity": 0.9,
+            "maxOpacity": 0.6,
             // scales the radius based on map zoom
             "scaleRadius": true,
             // if set to false the heatmap uses the global maximum for colorization
@@ -67,6 +67,7 @@ $(document).ready(function(){
             };
             // place data on map
             heatmapLayer.setData(testData);
+            heatmapLayer.redraw();
            });
 
         });
