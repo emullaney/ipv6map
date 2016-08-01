@@ -21,9 +21,10 @@ First clone the repository from Github and switch to the new directory::
     cd ipv6map
     
 To setup your local environment you should create a virtualenv running Python 3.5 and install the
-necessary requirements::
+necessary requirements. You probably don't need to run the `workon` command, but this is just to ensure that you are connected to your new virtual environment.::
 
     mkvirtualenv heatmap -p /usr/bin/python3.5
+    workon heatmap
     $VIRTUAL_ENV/bin/pip install requirements.txt
     
 Create the database and run the initial syncdb, which will also execute any required migrations. This step may take a while because it will read in all 355,000+ rows of data from the IPv6 CSV file.::
