@@ -29,7 +29,16 @@ class ipv6AddressAPITestCase(TestCase):
         }
         response = self.client.get(self.url, data=data, format='json')
         self.assertEqual(response.status_code, status.HTTP_200_OK)
-        data = response.data
         self.assertEqual(len(response.data), 4)
 
-        #self.assertEqual(data['results'][0]['id'], test_asset.id)
+    def test_filter_no_results(self):
+        # Should return 0 addresses
+        data = {
+            'min_latitude': 2000,
+            'max_latitude': 2001,
+            'min_longitude': 2002,
+            'max_longitude': 2003
+        }
+        response = self.client.get(self.url, data=data, format='json')
+        self.assertEqual(response.status_code, status.HTTP_200_OK)
+        self.assertEqual(len(response.data), 0)
