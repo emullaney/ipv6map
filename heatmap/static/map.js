@@ -1,4 +1,9 @@
 $(document).ready(function(){
+    //Load informational modal on page load
+    $('#button').click(function() {
+      $('#modal').hide();
+    });
+
     var mapData = [];
     $.getJSON('/api/addresses/?format=json&max_latitude=36&max_longitude=-78&min_latitude=34&min_longitude=-81', function( data ) {
           for(var i = 0; i < data.length; i++) {
@@ -12,7 +17,7 @@ $(document).ready(function(){
         // Layer for base map
         var baseLayer = L.tileLayer(
             'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://cloudmade.com">CloudMade</a>',
+            attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://cloudmade.com">CloudMade</a>, IPv6 address data © <a href="http://www.maxmind.com">MaxMind</a>',
             maxZoom: 18
         });
 

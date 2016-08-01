@@ -4,7 +4,7 @@
 <html>
 
 <head>
-    <title>IPV6 Heatmap</title>
+    <title>IPv6 Heatmap</title>
     {% compress css %}
     <link rel="stylesheet" href="{% static 'leaflet.css' %}">
     <link rel="stylesheet" href="{% static 'map.css' %}">
@@ -18,7 +18,19 @@
 </head>
 
 <body>
-    <div id="map"></div>
+    <div id="map">
+        <div id="modal">
+            <div class="modalcontent">
+                <div>
+                  Welcome to the IPv6 Heatmap application!<br/><br/>
+                  Drag the map and use the +/- buttons to zoom. <br/><br/>
+                  This product includes GeoLite2 data created by MaxMind, available from <a href="http://www.maxmind.com" target="new">http://www.maxmind.com</a>.
+                </div>
+                <br/>
+                <button id="button">Try it out!</button>
+            </div>
+        </div>
+    </div>
 </body>
 
 {% compress js %}
