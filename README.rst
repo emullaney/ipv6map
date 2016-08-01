@@ -26,10 +26,14 @@ necessary requirements::
     mkvirtualenv heatmap -p /usr/bin/python3.5
     $VIRTUAL_ENV/bin/pip install requirements.txt
     
-Create the database and run the initial syncdb, which will also execute any required migrations::
+Create the database and run the initial syncdb, which will also execute any required migrations. This step may take a while because it will read in all 355,000+ rows of data from the IPv6 CSV file.::
 
     createdb -E UTF-8 heatmap
     python manage.py syncdb
+    
+Run the small suite of tests with::
+
+    python manage.py test
 
 You should now be able to run the development server::
 
