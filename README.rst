@@ -1,7 +1,7 @@
 ipv6map
 ==============
 
-Below you will find basic setup and deployment instructions for the rapidpro_community_portal
+Below you will find basic setup and deployment instructions for the ipv6 heatmap
 project. To begin you should have the following applications installed on your
 local development system::
 
